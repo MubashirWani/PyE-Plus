@@ -1,0 +1,7 @@
+numpy
+pandas
+matplotlib
+deap
+scikit-learn
+eppy
+pillow
