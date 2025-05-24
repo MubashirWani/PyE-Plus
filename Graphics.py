@@ -111,18 +111,6 @@ def generate_lhc():
     # Re-enable Train Surrogate button
     train_btn.config(state='normal')
 
-# Update RMSE automatically on GUI (ML Page)
-# def update_surrogate_rmse(X, Y, surrogate):
-#     if X is not None and Y is not None and surrogate is not None:
-#         pred = surrogate.predict(X)
-#         rmse = np.sqrt(np.mean((pred - Y) ** 2))
-#         def thread_safe_update():
-#             surrogate_error_var.set(f"Surrogate RMSE: {rmse: .3f}")
-#         root.after(0, thread_safe_update)
-#     else:
-#         root.after(0, lambda: surrogate_error_var.set("Surrogate RMSE: N/A"))
-
-
 update_rmse_callback = None # Placeholder for the callback registration
 
 def update_surrogate_rmse(X, Y, surrogate, rmse=None, gen=None):
@@ -193,11 +181,6 @@ def train_surrogate():
     X_train.extend(X)
     Y_train.extend(Y)
 
-    # Compute RMSE and update UI
-    # pred = surrogate.predict(X)
-    # rmse = np.sqrt(np.mean((pred - Y) ** 2))
-    # surrogate_error_var.set(f"Surrogate RMSE: {rmse:.3f}")
-
     update_surrogate_rmse(X_train, Y_train, surrogate)
 
 def start_surrogate_nsga():
@@ -261,10 +244,6 @@ def start_surrogate_nsga():
         print("[INFO] Starting surrogate-assisted NSGA-II optimization")
         print(f"[DEBUG] Generations: {gens}, Population: {pop_size}, Infill Fraction: {infill}, Retrain Interval: {retrain_it}")
         print(f"[DEBUG] Using surrogate: {type(surrogate)} with {len(X_train)} training samples")
-
-        # # Call NSGA-II with surrogate enabled
-        # pareto_thread = threading.Thread(target=live_pareto_updater, daemon=True)
-        # pareto_thread.start()
 
         # Start simulation state tracking
         nsga_simulation_running.set(True)
@@ -576,15 +555,6 @@ def start_simulation():
         return
     global start_time, process
     folder_path = folder_path_var.get()
-
-    # # Validate num_vectors
-    # try:
-    #     num_vectors = int(num_vectors_var.get())
-    #     if num_vectors <= 0:
-    #         raise ValueError
-    # except ValueError:
-    #     messagebox.showerror("Invalid Input", "Please enter a positive integer for the number of parameter vectors.")
-    #     return
 
     # Validate and save theta_baseline values
     try:
@@ -1081,20 +1051,6 @@ for algo in ["PSO", "NSGA-II", "CLPSO", "Machine Learning"]:
         surrogate_led.grid(row=1, column=1, sticky="w")
         surrogate_led.create_oval(2, 2, 18, 18, fill="red", tags="led")
 
-        # # --- Place Surrogate Mode Checkbox (for user control) ---
-        # surrogate_checkbox = tk.Checkbutton(
-        #     right_nsga_frame, text="Use Surrogate Model (SA-NSGA-II)",
-        #     variable=use_surrogate_var
-        # )
-        # surrogate_checkbox.grid(row=3, column=0, columnspan=2, sticky="w")
-
-        # tk.Button(
-        #     right_nsga_frame,
-        #     text="Go to Surrogate Modeling (Machine Learning)",
-        #     font=("Helvetica", 9),
-        #     command=lambda: show_page("Machine Learning")
-        # ).grid(row=3, column=0, columnspan=2, sticky="w", pady=(0, 2))
-
         # LED Set-up
         def update_surrogate_led(*args):
             if use_surrogate_var.get():
@@ -1107,30 +1063,8 @@ for algo in ["PSO", "NSGA-II", "CLPSO", "Machine Learning"]:
         use_surrogate_var.trace_add("write", update_surrogate_led)
         update_surrogate_led()
 
-
-        # In your NSGA-II page layout (after declaring use_surrogate_var):
-        # led_frame = tk.Frame(right_nsga_frame)
-        # led_frame.grid(row=4, column=0, columnspan=2, pady=(10, 0))
-        # tk.Label(led_frame, text="Surrogate Modeling: ").pack(side="left")
-        # surrogate_led = tk.Canvas(led_frame, width=20, height=20, highlightthickness=0)
-        # surrogate_led.pack(side="left")
-        # surrogate_led.create_oval(2, 2, 18, 18, fill="red", tags="led")  # starts as red
-
         # Bind variable (this triggers when box is toggled)
         use_surrogate_var.trace_add("write", lambda *args: update_surrogate_led())
-
-        # comfort_bounds_min = tk.DoubleVar(value=18.0)
-        # comfort_bounds_max = tk.DoubleVar(value=28.0)
-        # T_ideal_value = tk.DoubleVar(value=23.0)
-
-        # tk.Label(right_nsga_frame, text="Min Comfort Temp (°C):").grid(row=0, column=0, sticky="w")
-        # tk.Entry(right_nsga_frame, textvariable=comfort_bounds_min, width=10).grid(row=0, column=1, sticky="w")
-        #
-        # tk.Label(right_nsga_frame, text="Max Comfort Temp (°C):").grid(row=1, column=0, sticky="w")
-        # tk.Entry(right_nsga_frame, textvariable=comfort_bounds_max, width=10).grid(row=1, column=1, sticky="w")
-        #
-        # tk.Label(right_nsga_frame, text="Ideal Temperature (°C):").grid(row=2, column=0, sticky="w")
-        # tk.Entry(right_nsga_frame, textvariable=T_ideal_value, width=10).grid(row=2, column=1, sticky="w")
 
         # --- NEW COLUMN: NSGA-II Parameters ---
         params_nsga_frame = tk.LabelFrame(nsga_layout_frame, text="NSGA-II Parameters", padx=10, pady=10,
@@ -1175,25 +1109,6 @@ for algo in ["PSO", "NSGA-II", "CLPSO", "Machine Learning"]:
             width=600,
             justify="center"
         ).pack(fill="both", expand=True)
-
-        # # — NSGA‑II Progress Bar & Elapsed Time —
-        # nsga_progress_frame = tk.Frame(scrollable_page)
-        # nsga_progress_frame.pack(pady=10, fill="x")
-        # nsga_progress_bar = ttk.Progressbar(
-        #     nsga_progress_frame,
-        #     orient="horizontal", length=300, mode="indeterminate"
-        # )
-        # nsga_progress_bar.pack(fill="x", expand=True)
-        # tk.Label(
-        #     nsga_progress_frame,
-        #     textvariable=nsga_progress_label,
-        #     font=("Helvetica", 9)
-        # ).pack(padx=5)
-        # tk.Label(
-        #     scrollable_page,
-        #     textvariable=nsga_elapsed_time_display,
-        #     font=("Helvetica", 9)
-        # ).pack(pady=(0, 10))
 
     tk.Label(scrollable_page, text=f"{algo} Page", font=("Helvetica", 14, "bold"), fg="darkblue").pack(pady=20)
     tk.Button(scrollable_page, text="Back", font=("Helvetica", 10), bg="blue", fg="white", command=lambda: show_page("EA/AI")).pack(pady=10)
