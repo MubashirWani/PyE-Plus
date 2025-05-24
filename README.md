@@ -54,6 +54,8 @@
 📄 License
 This project is licensed under the MIT License.
 
+---
+
 🧠 Acknowledgements
    - Developed as part of research on building energy optimization and smart grid integration.
 
