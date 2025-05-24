@@ -1,0 +1,16 @@
+{
+    "Thermal_Absorptance": 0.9340016791959843,
+    "Solar_Absorptance": 0.6906033572657843,
+    "Thickness": 0.24843532871504753,
+    "Conductivity": 2.4481172778786333,
+    "initial_heating_setpoint_guestroom": 15.261363830773726,
+    "initial_cooling_setpoint_guestroom": 23.0,
+    "initial_heating_setpoint_corridor": 15.371649539526935,
+    "initial_cooling_setpoint_corridor": 21.030927540236334,
+    "lighting_power_density_guestroom": 0.32150573068626814,
+    "lighting_power_density_corridor": 0.12990425651512377,
+    "plug_load_power_density_guestroom": 0.06419300084449002,
+    "plug_load_power_density_corridor": 0.013387279995597298,
+    "infiltration_rate_guestrooms": 0.05795927343549659,
+    "infiltration_rate_corridors": 0.0890706860834784
+}
