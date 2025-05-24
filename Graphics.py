@@ -943,6 +943,11 @@ for algo in ["PSO", "NSGA-II", "CLPSO", "Machine Learning"]:
         tk.Button(btn_frame, text="Start SA-NSGA-II", bg="#cceeff",
                   command=lambda: threading.Thread(target=start_surrogate_nsga, daemon=True).start()).pack(side="left", padx=5)
 
+        # For jumping to NSGA-II page to view Pareto plots
+
+        tk.Button(btn_frame, text = "View Live Pareto", font = ("Helvetica", 9),
+                  bg = "green", command = lambda: show_page("NSGA-II")).pack(side="left", padx=5)
+
         # 7) Live status labels
         status_frame = tk.Frame(ml_frame)
         status_frame.grid(row=6, column=0, columnspan=2, pady=(10, 0))
