@@ -49,14 +49,6 @@
 
   - python Graphics.py
 
-
-📚 Citation
-If you use PyE+ in your research or derivative work, please cite:
-
-Mubashir Hussain Wani. "PyE+: A Python-EnergyPlus Co-simulation and Optimization Framework with Expedited Computation using ML-based Surrogate Modeling", 2025.
-GitHub: https://github.com/MubashirWani/PyE-Plus
-ORCID: 0000-0002-9351-1458
-
 📄 License
 This project is licensed under the MIT License.
 
