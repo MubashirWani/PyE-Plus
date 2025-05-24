@@ -55,7 +55,7 @@ This project is licensed under the MIT License.
 🧠 Acknowledgements
    - Developed as part of research on building energy optimization and smart grid integration.
 
-EnergyPlus® is a product of the U.S. Department of Energy.
+   - EnergyPlus® is a product of the U.S. Department of Energy.
 
 ---
 
