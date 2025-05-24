@@ -1099,7 +1099,7 @@ for algo in ["PSO", "NSGA-II", "CLPSO", "Machine Learning"]:
         def update_surrogate_led(*args):
             if use_surrogate_var.get():
                 surrogate_led.itemconfig("led", fill="green")
-                surrogate_status_label.config(text="Active", fg="green")
+                surrogate_status_label.config(text="Selected", fg="green")
             else:
                 surrogate_led.itemconfig("led", fill="red")
                 surrogate_status_label.config(text="Inactive", fg="red")
