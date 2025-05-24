@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use PyE+ in your research, please cite it as below."
+title: "PyE+: A Python-EnergyPlus Co-simulation and Optimization Framework with Expedited Computation using ML-based Surrogate Modeling"
+authors:
+  - family-names: Wani
+    given-names: Mubashir Hussain
+    orcid: https://orcid.org/0000-0002-9351-1458
+date-released: 2025-05-24
+version: "1.0.0"
+license: MIT
+repository-code: https://github.com/MubashirWani/PyE-Plus
+keywords:
+  - EnergyPlus
+  - Python
+  - optimization
+  - NSGA-II
+  - surrogate modeling
+  - machine learning
+  - building simulation
