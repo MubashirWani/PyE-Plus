@@ -2,17 +2,6 @@
 
 **A Python–EnergyPlus Co-simulation and Optimization Framework with Expedited Computation using ML-based Surrogate Modeling**
 
-Great — here’s a polished README.md template tailored to your PyE+ app with a professional, research-friendly tone and proper structure:
-
-📘 README.md Template for PyE+
-# PyE+
-
-**A Python–EnergyPlus Co-simulation and Optimization Framework with Expedited Computation using ML-based Surrogate Modeling**
-
-![License](https://img.shields.io/github/license/MubashirWani/PyE-Plus)
-![Repo Size](https://img.shields.io/github/repo-size/MubashirWani/PyE-Plus)
-![Last Commit](https://img.shields.io/github/last-commit/MubashirWani/PyE-Plus)
-
 ---
 
 ## 🔍 Overview
