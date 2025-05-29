@@ -18,6 +18,7 @@
 - ✅ GUI built with **Tkinter** for user-friendly execution
 - ✅ Live plotting of Pareto front and RMSE trends
 - ✅ Citation-aware licensing and `CITATION.cff` metadata
+- ✅ Two **EnergyPlus** Input Data Files (IDFs) namely: "_Baseline_IDF_Modified_" and "_RealBuilding_Test_MoreParameters_Wellington_Python_" are provided with the package. The users are advised to study the EnergyPlus model objects especially the _Python Plugin_ defined in the later for a better understanding on EnergyPlus Python API.
 
 ---
 
