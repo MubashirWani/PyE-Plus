@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 # Pilot_Interface.py
+
+# PyE+ - A Python-EnergyPlus Optimization Framework
+# Copyright (c) 2025 Dr. Mubashir Hussain Wani
+# Licensed under the MIT License. See LICENSE file in the project root for full license text.
+
 import sys
 import numpy as np
 from utils import read_json, write_json, run_energyplus, save_results_to_json, clear_output_folder
