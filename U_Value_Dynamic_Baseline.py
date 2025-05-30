@@ -1,4 +1,9 @@
 #U_Value_Dynamic_Baseline.py
+
+# PyE+ - A Python-EnergyPlus Optimization Framework
+# Copyright (c) 2025 Dr. Mubashir Hussain Wani
+# Licensed under the MIT License. See LICENSE file in the project root for full license text.
+
 from eppy import modeleditor
 from eppy.modeleditor import IDF
 import subprocess
