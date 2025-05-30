@@ -1,4 +1,9 @@
 #Graphics.py
+
+# PyE+ - A Python-EnergyPlus Optimization Framework
+# Copyright (c) 2025 Dr. Mubashir Hussain Wani
+# Licensed under the MIT License. See LICENSE file in the project root for full license text.
+
 import json
 import traceback
 import os
