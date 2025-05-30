@@ -1,4 +1,9 @@
 #ml_surrogates.py
+
+# PyE+ - A Python-EnergyPlus Optimization Framework
+# Copyright (c) 2025 Dr. Mubashir Hussain Wani
+# Licensed under the MIT License. See LICENSE file in the project root for full license text.
+
 """
 Surrogate model abstractions for surrogate-assisted NSGA-II.
 Implements RandomForest, GaussianProcess, and MLPRegressor surrogates.
