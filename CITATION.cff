@@ -9,6 +9,7 @@ date-released: 2025-05-24
 version: "1.0.0"
 license: MIT
 repository-code: https://github.com/MubashirWani/PyE-Plus
+doi: 10.5281/zenodo.15877753
 keywords:
   - EnergyPlus
   - Python
