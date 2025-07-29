@@ -47,7 +47,7 @@
      
 4. Run the GUI:
 
-  - python Graphics.py
+   - python Graphics.py
 
 ---
 
