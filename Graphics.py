@@ -828,7 +828,7 @@ elapsed_time_label.grid(row=6, column=0, columnspan=2, padx=10, pady=5, sticky="
 # Footer
 footer_frame = tk.Frame(scrollable_main)
 footer_frame.grid(row=7, column=0, columnspan=2, pady=10, sticky="ew")
-footer_label = tk.Label(footer_frame, text="© 2024-2025: Dr. Mubashir Wani. All Rights Reserved.", font=("Helvetica", 9))
+footer_label = tk.Label(footer_frame, text="© 2025-2026: Dr. Mubashir Wani. All Rights Reserved.", font=("Helvetica", 9))
 footer_label.pack(fill="x")
 
 # EA/AI Page
